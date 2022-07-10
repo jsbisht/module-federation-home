@@ -1,8 +1,8 @@
-# Credit Score Mono Repo
+# MyBooks Mono Repo
 
-Credit Score Mono Repo
+MyBooks Mono Repo
 
-# Create new repo
+# Create new project
 
 ```
 npx create-mf-app

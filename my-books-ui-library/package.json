@@ -1,17 +1,12 @@
 {
-  "name": "credit-score-ui-upsell",
+  "name": "my-books-ui-library",
   "version": "1.0.0",
   "scripts": {
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development",
-    "build:start": "cd dist && PORT=5555 npx serve",
+    "build:start": "cd dist && PORT=4444 npx serve",
     "start": "webpack serve --open --mode development",
     "start:live": "webpack serve --open --mode development --live-reload --hot"
-  },
-  "license": "MIT",
-  "author": {
-    "name": "Jack Herrington",
-    "email": "jherr@pobox.com"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
@@ -32,6 +27,7 @@
   "dependencies": {
     "@babel/runtime": "^7.13.10",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.3.5"
   }
 }
