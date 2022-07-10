@@ -4,7 +4,7 @@ const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPl
 const deps = require('./package.json').dependencies
 module.exports = {
   output: {
-    publicPath: 'http://localhost:3333/'
+    publicPath: 'http://localhost:7777/'
   },
 
   resolve: {
@@ -12,7 +12,7 @@ module.exports = {
   },
 
   devServer: {
-    port: 3333,
+    port: 7777,
     historyApiFallback: true
   },
 
@@ -41,14 +41,15 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: 'uiskeleton',
+      name: 'uihome',
       filename: 'remoteEntry.js',
       remotes: {
-        uiskeleton: 'uiskeleton@http://localhost:3333/remoteEntry.js',
         uilib: 'uilib@http://localhost:4444/remoteEntry.js',
         uihome: 'uihome@http://localhost:7777/remoteEntry.js'
       },
-      exposes: {},
+      exposes: {
+        './HomePage': './src/HomePage.jsx'
+      },
       shared: {
         ...deps,
         react: {

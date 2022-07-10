@@ -1,14 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Header from 'uilib/Header'
 import AppSkeleton from 'uilib/AppSkeleton'
-import Routes from './routes'
+import HomePage from 'uihome/HomePage'
 
-const App = () => (
-  <AppSkeleton>
-    <Header />
-    <Routes />
-  </AppSkeleton>
-)
+function App() {
+  return (
+    <AppSkeleton>
+      <HomePage />
+    </AppSkeleton>
+  )
+}
 
 ReactDOM.render(<App />, document.getElementById('app'))
