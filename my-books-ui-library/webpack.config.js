@@ -48,7 +48,8 @@ module.exports = {
       },
       exposes: {
         './AppSkeleton': './src/components/AppSkeleton.jsx',
-        './Header': './src/components/Header.jsx'
+        './Header': './src/components/Header.jsx',
+        './InlineWidget': './src/components/InlineWidget.jsx'
       },
       shared: {
         ...deps,
