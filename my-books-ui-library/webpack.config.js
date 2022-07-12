@@ -49,7 +49,10 @@ module.exports = {
       exposes: {
         './AppSkeleton': './src/components/AppSkeleton.jsx',
         './Header': './src/components/Header.jsx',
-        './InlineWidget': './src/components/InlineWidget.jsx'
+        './InlineWidget': './src/components/InlineWidget.jsx',
+        './Loading': './src/components/Loading.jsx',
+        './ComponentsLoader': './src/utility/ComponentsLoader.js',
+        './ErrorBoundary': './src/utility/ErrorBoundary.js'
       },
       shared: {
         ...deps,

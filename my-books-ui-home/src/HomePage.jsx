@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import Loading from 'uilib/Loading'
+import ComponentsLoader from 'uilib/ComponentsLoader'
 
 export default function HomePage() {
   const [components, setComponents] = useState(null)
@@ -6,12 +8,12 @@ export default function HomePage() {
   useEffect(() => {
     fetch('http://localhost:8888/api/home')
       .then((response) => response.json())
-      .then((data) => setComponents(data))
+      .then((data) => setComponents(data.components))
   }, [])
 
   if (components) {
-    return <div>{JSON.stringify(components, null, 2)}</div>
+    return <ComponentsLoader components={components} />
   }
 
-  return <h1>Home Page Here</h1>
+  return <Loading />
 }

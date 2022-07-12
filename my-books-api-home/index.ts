@@ -35,6 +35,7 @@ function contextMapper(req: Request) {
       components: [
         {
           id: 'InlineWidget',
+          from: 'uilib',
           props: {
             type: 'offer',
             message: 'Welcome back Michelle'

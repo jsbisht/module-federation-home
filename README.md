@@ -8,7 +8,7 @@ MyBooks Mono Repo
 sh ./scripts/npm-install.sh
 ```
 
-or 
+or
 
 ```
 npm run setup
@@ -19,3 +19,8 @@ npm run setup
 ```
 npx create-mf-app
 ```
+
+## Notes
+
+https://webpack.js.org/api/module-methods/#dynamic-expressions-in-import
+https://loadable-components.com/docs/dynamic-import/
