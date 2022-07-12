@@ -1,0 +1,16 @@
+{
+  "name": "module-federation-home-main",
+  "version": "1.0.0",
+  "description": "MyBooks Mono Repo",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "clear": "rm -fr node_modules **/node_modules",
+    "setup": "sh ./scripts/npm-install.sh"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
