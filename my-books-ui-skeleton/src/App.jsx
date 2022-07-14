@@ -6,7 +6,7 @@ import Routes from './routes'
 
 const App = () => (
   <AppSkeleton>
-    <Header />
+    <Header name={'{UI Skeleton}'} />
     <Routes />
   </AppSkeleton>
 )

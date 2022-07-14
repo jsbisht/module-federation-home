@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-function Header() {
-  return <StyledHeader>My Books Header</StyledHeader>
+function Header({ name }) {
+  return <StyledHeader>My Books Header {name}</StyledHeader>
 }
 
 const StyledHeader = styled.div`
