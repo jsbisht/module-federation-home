@@ -4,49 +4,63 @@ import { Request } from 'express-serve-static-core'
 const app = express()
 const port = 9001
 
+/* mocking responses based on context */
 function contextMapper(req: Request) {
-  const hasCreatedInvoice = false
-  if (hasCreatedInvoice) {
-    return {
-      status: 'ok',
-      components: [
-        {
-          id: 'PopupWidget',
-          props: {
-            components: [
-              {
-                id: 'form',
-                props: {
-                  components: [
-                    { id: 'label', props: { text: 'Points', value: '1990' } },
-                    { id: 'input', props: { text: 'Redeem', value: '1000' } },
-                    { id: 'button', props: { text: 'Redeem now' } }
-                  ]
-                }
-              }
-            ]
-          }
+  const { query } = req
+  const { context } = query
+  const INLINE_WIDGET = {
+    status: 'ok',
+    components: [
+      {
+        id: 'InlineWidget',
+        from: 'uilib',
+        props: {
+          type: 'offer',
+          message: 'My Books Home Page (inline)'
         }
-      ]
-    }
-  } else {
-    return {
-      status: 'ok',
-      components: [
-        {
-          id: 'InlineWidget',
-          from: 'uilib',
-          props: {
-            type: 'offer',
-            message: 'Welcome back Michelle'
-          }
+      }
+    ]
+  }
+  const INTERSTITIAL_WIDGET = {
+    status: 'ok',
+    components: [
+      {
+        id: 'InlineWidget',
+        from: 'uilib',
+        props: {
+          type: 'offer',
+          message: 'Welcome Michelle (interstitial)'
         }
-      ]
-    }
+      }
+    ]
+  }
+  const POPUP_WIDGET = {
+    status: 'ok',
+    components: [
+      {
+        id: 'InlineWidget',
+        from: 'uilib',
+        props: {
+          type: 'offer',
+          message: 'Redeem Points (popup)'
+        }
+      }
+    ]
+  }
+
+  switch (context) {
+    case 'new':
+      return POPUP_WIDGET
+    case 'existing':
+      return INTERSTITIAL_WIDGET
+    default:
+      return INLINE_WIDGET
   }
 }
 
 app.get('/', (req, res) => {
+  console.log(req.url, req.baseUrl, req.query)
+
   res.json(contextMapper(req))
 })
 

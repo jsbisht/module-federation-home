@@ -1,6 +1,8 @@
 # MyBooks Mono Repo
 
-MyBooks Mono Repo
+MyBooks Mono Repo Architecture diagram
+
+![img](./docs/design/design.png)
 
 ## How to init the repos
 

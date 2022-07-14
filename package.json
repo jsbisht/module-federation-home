@@ -8,7 +8,8 @@
   },
   "scripts": {
     "clear": "rm -fr node_modules **/node_modules",
-    "setup": "sh ./scripts/npm-install.sh"
+    "setup": "sh ./scripts/npm-install.sh",
+    "start": ""
   },
   "keywords": [],
   "author": "",

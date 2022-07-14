@@ -9,7 +9,10 @@ export default function ContextualPanel() {
           <Link to="/home">home</Link>
         </li>
         <li className="element">
-          <Link to="/home/has-invoice">has invoice</Link>
+          <Link to="/home?context=existing">existing user</Link>
+        </li>
+        <li className="element">
+          <Link to="/home?context=new">new user</Link>
         </li>
       </ul>
       <style>
