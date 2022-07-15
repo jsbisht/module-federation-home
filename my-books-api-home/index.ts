@@ -34,16 +34,79 @@ function contextMapper(req: Request) {
       }
     ]
   }
+
+  // <label for="lname">Last name:</label><br>
+  // <input type="text" id="lname" name="lname" value="Doe"><br><br>
+  // <input type="submit" value="Submit">
   const POPUP_WIDGET = {
     status: 'ok',
     components: [
       {
-        id: 'InlineWidget',
-        from: 'uilib',
-        props: {
-          type: 'offer',
-          message: 'Redeem Points (popup)'
-        }
+        id: 'form',
+        from: 'window',
+        components: [
+          {
+            id: 'label',
+            from: 'window',
+            props: {
+              htmlFor: 'fname'
+            },
+            content: 'First name:'
+          },
+          {
+            id: 'br',
+            from: 'window'
+          },
+          {
+            id: 'input',
+            from: 'window',
+            props: {
+              id: 'fname',
+              name: 'fname',
+              type: 'text',
+              value: 'John',
+              readOnly: true
+            }
+          },
+          {
+            id: 'br',
+            from: 'window'
+          },
+          {
+            id: 'label',
+            from: 'window',
+            props: {
+              htmlFor: 'lname'
+            },
+            content: 'Last name:'
+          },
+          {
+            id: 'br',
+            from: 'window'
+          },
+          {
+            id: 'input',
+            from: 'window',
+            props: {
+              id: 'lname',
+              name: 'lname',
+              type: 'text',
+              value: 'John'
+            }
+          },
+          {
+            id: 'br',
+            from: 'window'
+          },
+          {
+            id: 'input',
+            from: 'window',
+            props: {
+              type: 'submit',
+              value: 'Submit'
+            }
+          }
+        ]
       }
     ]
   }
